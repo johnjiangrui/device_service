@@ -1,0 +1,7 @@
+.DS_Store
+.env
+env
+dist
+mqtt_service
+node_modules
+certs

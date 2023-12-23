@@ -1,0 +1,35 @@
+{
+	"name": "mqtt_service",
+	"version": "1.0.0",
+	"description": "mqtt handlers",
+	"main": "app.js",
+	"scripts": {
+		"dev": "npx tsc && cp -r src/proto dist && node --env-file=.env dist/app.js",
+		"build": "npx tsc && cp -r src/proto dist",
+		"deploy": "echo 'Building...' && echo 'copying...' && npx tsc && cp -r src/proto dist &&  cp .env dist && cp package.json dist && mv dist device_service && scp -r device_service john@192.168.0.100:~/ && mv device_service dist",
+		"start": "node --env-file=.env app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/johnjiangrui/mqtt_service.git"
+	},
+	"keywords": [
+		"mqtt"
+	],
+	"author": "JohnJiang",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/johnjiangrui/mqtt_service/issues"
+	},
+	"homepage": "https://github.com/johnjiangrui/mqtt_service#readme",
+	"dependencies": {
+		"amqplib": "^0.10.3",
+		"mqtt": "^5.3.3",
+		"protobufjs": "^7.2.5"
+	},
+	"devDependencies": {
+		"@types/amqplib": "^0.10.4",
+		"@types/mqtt": "^2.5.0",
+		"typescript": "^5.3.3"
+	}
+}

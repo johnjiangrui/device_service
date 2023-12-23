@@ -1,0 +1,40 @@
+syntax="proto3";
+
+package MessagePackage;
+
+message Text {
+    string id = 0;
+    string senderId = 1;
+    string senderName = 2;
+    string assistantId = 3;
+    string threadId = 4;
+    string name = 5;
+    string instructions = 6;
+    string content = 7;
+    string result = 8;
+}
+
+
+message Audio {
+    string id = 0;
+    string senderId = 1;
+    string senderName = 2;
+    string assistantId = 3;
+    string name = 4;    // assistant name , for openAI API
+    string threadId = 5;
+    string instructions = 6;
+    string fileUrl = 7;
+    string result = 8;
+}
+
+message ToAssistant {
+    string id = 0;
+    string senderId = 1;
+    string senderName = 2;
+    string assistantId = 3;
+    string threadId = 4;
+    string name = 5;
+    string instructions = 6;
+    string content = 7;
+    string result = 8;
+}
